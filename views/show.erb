@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>zketch</title>
+  <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="imgscale.jquery.js"></script>  
+  <script type="text/javascript" src="application.js"></script>
+</head>
+<body>
+  
+<a href="/upload" style="color: #333333; font-size: 14px; font-family: Arial; text-decoration: underline; float: right;">upload</a>
+<a href="/best" style="margin: 0 20px; color: #333333; font-size: 14px; font-family: Arial; text-decoration: underline; float: right;">best</a>
+<h1>ZKETCH</h1>
+
+<% if @filename %>
+  <input type="hidden" id="id" value="<%= @filename %>" />
+<% end %>
+
+<% if @filename %>
+  <img src="<%= "#{@filename}.jpg" %>"  id="img" />  
+  <br/>
+  <br/>
+  <div style="text-align: center;">
+  <% if @rating %>
+    <p><span id="rating"><%= "%.2f" % @rating %></span>%</p>
+  <% else %>
+    <% if @filename %>
+      <p><span id="rating">-</span>%</p>
+    <% end %>
+  <% end %>  
+  <br/>
+  </div>
+  <div style="text-align: center;">
+  <% if @prev %>
+    <a href="<%= @prev %>"><img src="prev.png" /></a>
+  <% else %>   
+    <a style="opacity: 0;" href="#"><img src="prev.png" /></a>
+  <% end %>  
+  <a href="#" id="up"><img src="up.png" /></a>
+  <a href="#" id="down"><img src="down.png" /></a>
+  <% if @next %>
+    <a href="<%= @next %>"><img src="next.png" /></a>
+  <% else %>   
+    <a style="opacity: 0;" href="#"><img src="prev.png" /></a>
+  <% end %>
+  </div>
+<% end %>
+
+</body>
+</html>

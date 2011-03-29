@@ -1,0 +1,6 @@
+html { background-image: url('/background.png'); }
+
+body { width: 600px; margin: 20px auto;}
+
+h1 {font-size: 32px;font-family: Arial; color: #333333; }
+p { font-size: 18px; font-family: Arial; color: #333333; }
